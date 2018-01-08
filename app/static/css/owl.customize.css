@@ -1,0 +1,52 @@
+.owl-carousel {
+  overflow: visible; }
+
+.owl-prev,
+.owl-next {
+  font-size: 48px;
+  position: absolute;
+  top: 0;
+  opacity: .5;
+  height: 100%;
+  width: 65px;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  transition: all .2s ease-out;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)); }
+  .owl-prev:hover,
+  .owl-next:hover {
+    opacity: .9; }
+  .owl-prev.disabled,
+  .owl-next.disabled {
+    opacity: 0; }
+
+.owl-prev {
+  -webkit-transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0);
+  transform: translate(-100%, 0); }
+
+.owl-next {
+  right: -6px;
+  -webkit-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0); }
+
+.owl-carousel .owl-stage-outer {
+  overflow: visible; }
+
+.owl-item:hover {
+  z-index: 66; }
+
+.owl-carousel:hover {
+  position: relative;
+  z-index: 2; }
+
+.owl-carousel .owl-item {
+  display: inline-block;
+  float: none;
+  vertical-align: middle; }

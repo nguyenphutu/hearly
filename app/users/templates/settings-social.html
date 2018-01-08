@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Hearly
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.customize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <link href="{{ url_for('static', filename='imgs/favicon.ico') }}" rel='shortcut icon' type='image/x-icon'>
+</head>
+<body class="profile-page">
+
+    <div class="header header--light-theme">
+        <div class="wrap">
+            <div class="header__left pull-left">
+                <div class="header__logo">
+                    <a href="#" class="logo">Hearly</a>
+                </div>
+                <nav class="header__nav">
+                    <ul class="nav">
+                        <!-- <li class="nav__item"><a href="#">Home</a></li> -->
+                        <li class="nav__item nav__item--special dropdown hover dropdown--arrow">
+                            <a href="#">Browse</a>
+                            <div class="dropdown__content">
+                                <div class="browselist browselist--light-theme">
+                                    <div class="browselist__col">
+                                        <a href="#">Actions</a>
+                                        <a href="#">Adventure</a>
+                                        <a href="#">Animation</a>
+                                        <a href="#">Biography</a>
+                                        <a href="#">Comedy</a>
+                                    </div>
+                                    <div class="browselist__col">
+                                        <a href="#">Crime</a>
+                                        <a href="#">Documentary</a>
+                                        <a href="#">Drama</a>
+                                        <a href="#">Family</a>
+                                        <a href="#">Fantasy</a>
+                                    </div>
+                                    <div class="browselist__col">
+                                        <a href="#">History</a>
+                                        <a href="#">Horror</a>
+                                        <a href="#">Music</a>
+                                        <a href="#">Mystery</a>
+                                        <a href="#">Romance</a>
+                                    </div>
+                                    <div class="browselist__col">
+                                        <a href="#">Sci-fi</a>
+                                        <a href="#">Sport</a>
+                                        <a href="#">Thriller</a>
+                                        <a href="#">War</a>
+                                        <a href="#">Western</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="header__right pull-right">
+                <form action="#" class="header__search search search--light-theme">
+                    <label>
+                        <span type="button" class="search__toggle"><i class="mdi mdi-magnify"></i></span>
+                        <input id='search' type="text" placeholder="Search movies, people, and more.." class="search__field">
+                    </label>
+                </form>
+                <div tabindex='1' class="header__notify dropdown dropdown--right">
+                    <a class="mdi mdi-bell-outline"></a>
+                    <div class="dropdown__content">
+                        <div class="browselist browselist--light-theme" style='width: 400px; text-align: center'>
+                            <div class="demo" style="text-align: center">Comming soon</div>
+                        </div>
+                    </div>
+                </div>
+                <div tabindex='1' class="header__account dropdown dropdown--right">
+                    <a class="mdi mdi-account-outline"></a>
+                    <div class="dropdown__content">
+                        <div class="account account--light-theme">
+                            <div class="account__actions">
+                                <a href="#">Profile</a>
+                                <a href="#">Settings</a>
+                                <a href="#">Sign out</a>
+                            </div>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="main">
+        <div class="settings">
+            <div class="wrap">
+
+                <div class="settings__categories">
+                    <div class="settings__title">Settings</div>
+                    <a href="settings-account.html" class="settings__category ">Account</a>
+                    <a href="settings-password.html" class="settings__category">Password</a>
+                    <a href="settings-social.html" class="settings__category active">Social</a>
+                </div>
+                <form id="settings" action="#" class="settings__content">
+                    <button type="submit" class="settings__save-btn btn btn--prm">Save changes</button>
+                    <div class="settings__title">Social</div>
+                    <div class="setting__form">
+                        <div class="input">
+                            <div class="input__label"><img class="icon" src="{{ url_for('static', filename='imgs/google-icon.svg') }}" alt="">Google</div>
+                            <div class="input__field">
+                                khunglongxanh999@gmail.com | <a href="#">Change</a>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <div class="input__label"><i class="icon mdi mdi-facebook"></i>Facebook</div>
+                            <div class="input__field">
+                                <a href="#">Connect</a>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <div class="input__label"><i class="icon mdi mdi-twitter"></i>Twitter</div>
+                            <div class="input__field">
+                                <a href="#">Connect</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="footer footer--light-theme">
+            <div class="footer__left pull-left">
+                <p>&copy; Hearly 2017</p>
+            </div>
+            <div class="footer__right pull-right">
+                <nav class="footer__nav footernav">
+                    <a class="footernav__item" href="#">About</a>
+                    <a class="footernav__item" href="#">Blog</a>
+                    <a class="footernav__item" href="#">FAQs</a>
+                    <a class="footernav__item" href="#">Contacts</a>
+                    <a class="footernav__item" href="#">Terms</a>
+                    <a class="footernav__item" href="#">Privacy</a>
+                    <a class="footernav__item" href="#">
+                        <i class="mdi mdi-facebook"></i>
+                    </a>
+                    <a class="footernav__item" href="#">
+                        <i class="mdi mdi-twitter"></i>
+                    </a>
+                    <a class="footernav__item" href="#">
+                        <i class="mdi mdi-instagram"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <a href="google.com.vn" class="fab">
+        <i class="mdi mdi-message-processing"></i>
+        <span class="fab__message">
+            Feedback
+        </span>
+    </a>
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $("#settings input").on("keydown",function(){
+                console.log('here');
+                if (this.value)
+                $('#settings').attr('data-changed', 'true');
+            });
+        });
+    </script>
+</body>
+</html

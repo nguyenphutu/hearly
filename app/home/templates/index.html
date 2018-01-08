@@ -1,0 +1,206 @@
+{% from 'macros.html' import header %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hearly | Watch movies without subtitles</title>
+    {{ header() }}
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css">
+    <link href="{{ url_for('static', filename='imgs/favicon.ico') }}" rel='shortcut icon' type='image/x-icon'>
+    {% assets "index_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+    {% endassets %}
+</head>
+<body class='landingpage'>
+
+    <div class="header">
+        <div class="wrap">
+            <div class="header__left pull-left">
+                <div class="header__logo">
+                    <a href="/" class="logo">Hearly</a>
+                </div>
+            </div>
+            <div class="header__right pull-right">
+                <a href="#" id="btn-auth-login" class="btn btn--ghost">Đăng nhập</a>
+                <a href="#" id="btn-auth-trial" class="btn">Bắt đầu dùng thử</a>
+            </div>  
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="main">
+        <div class="deadpool-banner">
+            <div class="wrap ">
+                <div class="deadpool-banner__wrap">
+                    <div class="deadpool-banner__callout">
+                        <h1 class='deadpool-banner__title'>Hearly</h1>
+                        <p class="deadpool-banner__desc">Cái tai Hollywood</p>
+                    </div>
+                    <p class="deadpool-banner__text">
+                        Tận hưởng cảm giác xem phim Hollywood theo cách của người bản ngữ.  <br>Không cần xem phụ đề mà vẫn nghe hiểu thật dễ dàng với Hearly
+                    </p>
+                    <div class="deadpool-banner__cta">
+                        <div class="form__action">
+                            <a href="#" id="btn-register-to-try" class="btn btn--xl">Đăng ký để trải nghiệm</a>
+                        </div>
+                        <p class="deadpool-banner__hint">Gọi 0962984209 để đăng ký dùng thử</p>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+        <div class="intro-feature wrap">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="feature">
+                        <h3 class="feature__title">TOEML</h3>
+                        <p class="feature__desc">Test Of English for Movie Lovers</p>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="feature">
+                        <h3 class="feature__title">Fill in the Blank</h3>
+                        <p class="feature__desc">The best challenge to master listening skill</p>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="feature">
+                        <h3 class="feature__title">Be Hearing</h3>
+                        <p class="feature__desc">If you are not trying to listen, hearing simply happens.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="footer">
+            <div class="footer__left pull-left">
+                <p>&copy; Hearly 2017</p>
+            </div>
+            <div class="footer__right pull-right">
+                <nav class="footer__nav footernav">
+                    <a class="footernav__item" href="#">About</a>
+                    <a class="footernav__item" href="#">Blog</a>
+                    <a class="footernav__item" href="#">FAQs</a>
+                    <a class="footernav__item" href="#">Contacts</a>
+                    <a class="footernav__item" href="#">Terms</a>
+                    <a class="footernav__item" href="#">Privacy</a>
+                    <a class="footernav__item" href="#">
+                        <i class="mdi mdi-facebook"></i>
+                    </a>
+                    <a class="footernav__item" href="#">
+                        <i class="mdi mdi-twitter"></i>
+                    </a>
+                    <a class="footernav__item" href="#">
+                        <i class="mdi mdi-instagram"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <a href="https://www.messenger.com/t/voenh" target="_blank" class="fab">
+        <i class="mdi mdi-phone"></i>
+        <span class="fab__message">
+            Gọi 0962984209
+        </span>
+    </a>
+    <!-- Popup -->
+    <div id="auth-popup" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="auth openid-is-coming dark-theme">
+            <span class="close" data-dismiss="modal"><i class="mdi mdi-close"></i></span>
+            <div class="auth__tabslist">
+                <label class="auth__tab active" for="auth-signin">Log in</label>
+                <label class="auth__tab" for="auth-signup">Sign up</label>
+            </div>
+            <input id="auth-signin" type="radio" class="auth__control" name='tab' value='1' checked>
+            <div class="auth__content">
+                <form action="/auth/login" class="auth__local form form--full-btn" id="form-login" method="post">
+                    <div class="form__title">
+                        <div class="h2">Watch movie without subtitles</div>
+                    </div>
+                    <label class="form__input input">
+                        <span class="input__label">Username or Email</span>
+                        <input type="text" class="input__field field" name="email">
+                    </label>
+                    <label class="form__input input">
+                        <span class="input__label">Password</span>
+                        <input type="password" class="input__field field" name="password">
+                    </label>
+                    <label class="form__input">
+                        <input type="checkbox" checked> Keep me logged in
+                    </label>
+                    <label class="form__action">
+                        <button class="btn"  id="btn-login">Log in</button>
+                    </label>
+                    <div class="form__input">
+                        <a href="#">Forgot your username or password?</a>
+                    </div>
+                </form>
+                <div class="auth__openid form form--full-btn">
+                    <div class="form__input">
+                        <p>Coming soon</p>
+                    </div>
+                    <div class="form__action">
+                        <a href="#" class="btn">Google</a>
+                    </div>
+                    <div class="form__action">
+                        <a href="#" class="btn">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <input id='auth-signup'  type="radio" class="auth__control" name='tab' value='2'>
+            <div class="auth__content">
+                <div class="auth__openid form form--full-btn">
+                    <div class="form__input">
+                        <p>Coming soon</p>
+                    </div>
+                    <div class="form__action">
+                        <a href="#" class="btn">Google</a>
+                    </div>
+                    <div class="form__action">
+                        <a href="#" class="btn">Facebook</a>
+                    </div>
+                </div>
+                <form action="/auth/register" class="auth__local form form--full-btn" id="form-register" method="post">
+                    <div class="form__title">
+                        <div class="h2">Becomming Hollywood Citizen </div>
+                    </div>
+
+                    <label class="form__input input">
+                        <span class="input__label">Full Name</span>
+                        <input type="text" class="input__field field" name="fullname">
+                    </label>
+
+                    <label class="form__input input">
+                        <span class="input__label">Your Email</span>
+                        <input type="email" class="input__field field" name="email">
+                    </label>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label class="form__input input">
+                                <span class="input__label">Password</span>
+                                <input type="password" class="input__field field" name="password">
+                            </label>
+                        </div>
+                        <div class="col-xs-6">
+                            <label class="form__input input">
+                                <span class="input__label">Invite code</span>
+                                <input type="text" class="input__field field" name="coupon_code">
+                                <p>Hearly is in beta, you need invite code to join.</p>
+                            </label>
+                        </div>
+                    </div>
+                         
+                    <div class="form__action">
+                        <button class="btn" id="btn-register">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+{% assets "js_index" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+</body>
+</html>

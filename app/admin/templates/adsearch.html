@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>List movie</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+        .image{
+            width: 150px;
+            height: 200px;
+        }
+        .image img{
+            width: 100%;
+            height : 100%;
+        }
+    </style>
+<body>
+
+<div class="container">
+  <h2 style="text-align : center;"><a href="{{url_for('admin.movie')}}">Show all MOVIE</a></h2>
+  <div style="float: right;padding: 5px;background-color: #337ab7;">
+    <a href="/admin/upload" style="color: #fff">New Movie</a>
+  </div>
+    <form name="search" action="/admin/search">
+    <p>
+        <input type="text" name="search">
+        <button type="submit">Search</button>
+    </p>
+    </form>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Movie ID</th>
+        <th>Movie name</th>
+        <th>Movie description</th>
+        <th>Image</th>
+        <th>Categories</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% if movie %}
+        <tr>
+        <td>{{movie.movie_id}}</td>
+        <td>{{movie.movie_name}}</td>
+        <td>{{movie.movie_description}}</td>
+        <td>
+            <div class="image">
+                <img src="{{ movie.movie_thumbnail }}">
+            </div>
+        </td>
+        <td>{{movie.categories}}</td>
+        <td><a href="{{url_for('admin.movie')}}/edit/{{movie.movie_id}}">Edit</a></td>
+        <td><a href="{{url_for('admin.movie')}}/delete/{{movie.movie_id}}">Delete</a></td>
+        </tr>
+        {% endif %}
+
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

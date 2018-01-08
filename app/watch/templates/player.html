@@ -1,0 +1,82 @@
+{% from 'macros.html' import header %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ movie_name }}</title>
+    {{ header() }}
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/2.0.12/plyr.css">
+    <link href="{{ url_for('static', filename='imgs/favicon.ico') }}" rel='shortcut icon' type='image/x-icon'>
+    {% assets "player_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+    {% endassets %}
+</head>
+<body class="player-page">
+    <div id="player" class="player" data-sidebar='true'>
+
+    <div class="player__control">
+        <a href="/home" class="player__close">
+            <i class="mdi mdi-close"></i>
+        </a>
+
+        <div class="player__share dropdown dropdown--right">
+            <span class="ttip" data-tip='Share'><i class="mdi mdi-share"></i></span>
+            <div class="dropdown__content">
+                <ul class="social-share">
+                    <li><a href="#">
+                        <span class="social-share__icon mdi mdi-facebook"></span> Facebook
+                    </a></li>
+                    <li><a href="#">
+                        <span class="social-share__icon mdi mdi-email"></span> Email
+                    </a></li>
+                    <li><a href="#">
+                        <span class="social-share__icon mdi mdi-twitter"></span> Twitter
+                    </a></li>
+                    <li><a href="#">
+                        <span class="social-share__icon mdi mdi-link"></span> Copy: hearly.com/deadpool
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <button href="#" class="player__feedback ttip ttip--right" data-tip="Feed back">
+            <i class="mdi mdi-message-processing"></i>
+        </button>
+
+    </div>
+    <!-- <span id="player-toggle-sidebar" class="player__toggle-sidebar">
+        <span class="mdi mdi-closed-caption"></span>
+        <span class="mdi mdi-arrow-right-drop-circle"></span>
+    </span> -->
+
+    <div class="player__sidebar sublist">
+        {% for subtitle in subtitles %}
+        <div class="sublist__item subfiller" id="{{ subtitle[0] }}" data-cue="{{ subtitle[1] }}">
+            <div class="subfiller__time">{{ subtitle[2] }}</div>
+            <div class="subfiller__text">
+                {{ subtitle[4] | safe }}
+                <!--<input type='text' maxlength="20" value='google' size='5' class="subfilter__blank autogrow"/>-->
+            </div>
+        </div>
+        {% endfor %}
+        <div class="sublist__actions">
+            <a href="#" id="player_submit" class="btn">Submit</a>
+        </div>
+
+    </div>
+
+    <div class="player__media">
+        <div data-type="youtube" data-video-id="{{ movie_id }}"></div>
+        <span id="player-toggle-sidebar" class="player__toggle-sidebar ttip ttip--right ttip--top" data-tip='Closed Caption'>
+                <span class="mdi mdi-closed-caption"></span>
+            <!-- <span class="mdi mdi-arrow-right-drop-circle"></span> -->
+            </span>
+    </div>
+</div>
+
+{% assets "js_player" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+</body>
+</html>

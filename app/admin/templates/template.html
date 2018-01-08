@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>{% block title %}{% endblock %} | Hearly</title>
+    <!-- Bootstrap core CSS     -->
+    <link href="{{ url_for('static', filename='admin/bootstrap.min.css') }}" rel="stylesheet" />
+    <!-- Animation library for notifications   -->
+    <link href="{{ url_for('static', filename='admin/animate.min.css') }}" rel="stylesheet"/>
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="{{ url_for('static', filename='admin/light-bootstrap-dashboard.css') }}" rel="stylesheet"/>
+    <!--  page CSS    -->
+    <link href="{{ url_for('static', filename='admin/style.css') }}" rel="stylesheet"/>
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    {% block style %}
+    {% endblock %}
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-color="purple">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="/" class="simple-text">
+                    Hearly
+                </a>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a href="{{url_for('admin.movie')}}">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                        <p>Admin</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('admin.movie')}}">
+                        <i class="fa fa-table" aria-hidden="true"></i>
+                        <p>Table Movie</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('admin.category')}}">
+                        <i class="fa fa-table" aria-hidden="true"></i>
+                        <p>Table Category</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('admin.movie_sub')}}">
+                        <i class="fa fa-table" aria-hidden="true"></i>
+                        <p>Table Sub</p>
+                    </a>
+                </li>
+                <li class="active-pro">
+                    <a href="{{url_for('admin.upload_movie')}}">
+                        <i class="fa fa-upload" aria-hidden="true"></i>
+                        <p>Upload Movie</p>
+                    </a>
+                </li>
+
+
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                           <a href="">Hello,
+                               {{current_user.username}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Hearly</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+</div>
+</body>
+</html>

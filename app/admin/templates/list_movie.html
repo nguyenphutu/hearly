@@ -1,0 +1,50 @@
+{% extends "template.html" %}
+{% block title %}Movie List{% endblock %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='plugin/dataTables.bootstrap.min.css') }}">
+    <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='plugin/jquery-1.12.4.js') }}"></script>
+    <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='plugin/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" language="javascript" src="{{ url_for('static', filename='plugin/dataTables.bootstrap.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+	</script>
+{% endblock %}
+
+{% block content %}
+<div class="list_movie">
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+            <th>Movie ID</th>
+            <th>Movie name</th>
+            <th>Movie description</th>
+            <th>Image</th>
+            <th>Categories</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for movie in movies  %}
+            <tr>
+            <td>{{movie.movie_id}}</td>
+            <td>{{movie.movie_name}}</td>
+            <td>{{movie.movie_description}}</td>
+            <td>
+                <div class="image">
+                <img src="{{ movie.movie_thumbnail }}">
+                </div>
+            </td>
+            <td>{{movie.category}}</td>
+            <td><a href="{{url_for('admin.movie')}}/edit/{{movie.movie_id}}">Edit</a></td>
+            <td><a href="{{url_for('admin.movie')}}/delete/{{movie.movie_id}}">Delete</a></td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}

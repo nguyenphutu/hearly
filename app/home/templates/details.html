@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+{% block title %}{{ movie.movie_name }}{% endblock %}
+{% block body %}
+    <div class="main">
+        <div class="wrap">
+            <div class="movie-info">
+                <div class="movie-info__content">
+                    <div class="movie-info__header">
+                        <h1 class="movie-info__title h1">{{ movie.movie_name }}</h1>
+                        <div class="movie-info__metadata">
+                            <div class="movie-info__metaitem">
+                                <strong>IMDB </strong><span>N/A</span>
+                            </div>
+                            <div class="movie-info__metaitem">
+                                <span>3 min</span>
+                            </div>
+                            <div class="movie-info__metaitem">
+                                <span>2017</span>
+                            </div>
+                            <div class="movie-info__metaitem">
+                                <span>16+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="movie-info__desc">
+                        {{ movie.movie_description }}
+                    </p>
+                    <div class="movie-info__data">
+                        <div class="movie-info__dataitem">
+                            <strong>Actors:</strong>
+                            <a href='#'> Vin Diesel</a>,
+                            <a href='#'> Jason Statham</a>,
+                            <a href='#'> Dwayne Johnson</a>
+                            <a href='#' class='see-more'> See more </a>
+                        </div>
+                        <div class="movie-info__dataitem">
+                            <strong>Genres:</strong>
+                            <a href='#'> Action</a>,
+                            <a href='#'> Crime</a>,
+                            <a href='#'> Thriller</a>
+                        </div>
+                    </div>
+
+                    <div class="movie-info__actions">
+                        <a href="{{ '/watch/' + movie.movie_id }}" class="btn"><i
+                                class="mdi mdi-play-circle-outline"></i>Watch</a>
+                    </div>
+                </div>
+                <div class="movie-info__thumb">
+                    <img src="{{ movie.movie_thumbnail }}" alt="{{ movie.movie_name }}">
+                </div>
+            </div>
+            <div class="category">
+                <div class="category__header">
+                    <h3 class="h2">Related to {{ movie.movie_name }}</h3>
+                </div>
+                <div class="category__list">
+                    <div class="movies-slider owl-carousel owl-theme">
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://www.cinemaone.ro/wp-content/uploads/2017/03/fast-furious-8.jpg">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movies-slider__item item">
+                            <div class="movie">
+                                <div class="movie__thumb">
+                                    <img src="http://placehold.it/350x150">
+                                </div>
+                                <div class="movie__content">
+                                    <h4 class="movie__title h3">Got your girlfriend</h4>
+                                    <p class="movie__desc">Got your girlfriend at my crib watching Netflix you know I'm
+                                        a real OG and baby I ain't from the TO swaggie.</p>
+                                    <div class="movie__metadata">
+                                        <span>Genre:</span> <a href="#">Action</a>
+                                    </div>
+                                    <div class="movie__watch">
+                                        <a href="#" class="btn"><i class="mdi mdi-play-circle-outline"></i>Watch</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
